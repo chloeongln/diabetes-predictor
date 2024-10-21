@@ -49,7 +49,7 @@ with st.sidebar:
 st.header("Input features")
 age = st.slider("Age", 0, 100)
 bmi = st.slider("BMI Index (kg/m²)", 10.0, 50.0)
-HbA1c_level = st.slider("Latest HbA1c_level (g/dl)", 1.0, 50.0)
+HbA1c_level = st.slider("Latest HbA1c_level (g/dl)", 1.0, 20.0)
 blood_glucose_level = st.slider("Latest Glucose Level (mg/dL)", 50.0, 300.0)
 gender = st.selectbox("Gender", ("Female", "Male", "Other"))
 smoking_history = st.selectbox("Smoking History", ("current", "former", "never"))
@@ -102,10 +102,10 @@ processed_df = processed_df.reindex(columns=expected_columns, fill_value=0)
 
 # load model
 if st.button("Predict"):
-    rf_model = joblib.load('/Users/chloeong/diabetes prediction/rf_model.pkl')
-    gb_model = joblib.load('/Users/chloeong/diabetes prediction/grad_model.pkl')
-    xgb_model = joblib.load('/Users/chloeong/diabetes prediction/xgb_model.pkl')
-    meta_model = joblib.load('/Users/chloeong/diabetes prediction/lightgbm_meta_model.pkl')
+    rf_model = joblib.load('models/rf_model.pkl')
+    gb_model = joblib.load('models/grad_model.pkl')
+    xgb_model = joblib.load('models/xgb_model.pkl')
+    meta_model = joblib.load('models/lightgbm_meta_model.pkl')
 
     # predict models
     rf_pred = rf_model.predict_proba(processed_df)[:, 1] 
