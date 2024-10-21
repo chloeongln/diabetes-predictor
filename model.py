@@ -106,7 +106,7 @@ for key, value in trial.params.items():
     print("    {}: {}".format(key, value))
 
 # -------------------------------------------------------------------------
-# Model 2:  AdaBoost
+# Model 2:  Gradient Boost
 
 def objective_gradient_boosting(trial):
     n_estimators = trial.suggest_int('n_estimators', 50, 200)
@@ -274,13 +274,13 @@ report = classification_report(y_test, y_meta_pred)
 print(report)
 
 # -------------------------------------------------------------------------
-import joblib
+# import joblib
 
-# save model 
-joblib.dump(rf_model, '/Users/chloeong/diabetes prediction/rf_model.pkl')
-joblib.dump(grad_model, '/Users/chloeong/diabetes prediction/grad_model.pkl')
-joblib.dump(xgb_model, '/Users/chloeong/diabetes prediction/xgb_model.pkl')
-joblib.dump(lgb_model, '/Users/chloeong/diabetes prediction/lightgbm_meta_model.pkl')
+# # save model 
+# joblib.dump(rf_model, '/Users/chloeong/diabetes prediction/rf_model.pkl')
+# joblib.dump(grad_model, '/Users/chloeong/diabetes prediction/grad_model.pkl')
+# joblib.dump(xgb_model, '/Users/chloeong/diabetes prediction/xgb_model.pkl')
+# joblib.dump(lgb_model, '/Users/chloeong/diabetes prediction/lightgbm_meta_model.pkl')
 
 
 
