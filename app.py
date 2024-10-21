@@ -131,14 +131,8 @@ if st.button("Predict"):
                         ),
                     })
         st.info(
-            """Preventing diabetes involves a combination of healthy lifestyle choices and regular medical check-ups:<br>
-            - **Balanced Diet**: Eat whole grains, fruits, vegetables, and lean proteins.<br>
-            - **Limit Sugars**: Reduce intake of sugary and processed foods.<br>
-            - **Regular Exercise**: Aim for at least 150 minutes of moderate activity weekly.<br>
-            - **Weight Management**: Maintain a healthy weight to improve insulin sensitivity.<br>
-            - **Stress Management**: Practice stress-reduction techniques like mindfulness or yoga.<br>
-            - **Regular Check-Ups**: Get routine health screenings to catch early signs of diabetes.<br>
-            - **Stay Hydrated**: Drink plenty of water and limit sugary beverages."""
+            """Preventing diabetes involves a combination of healthy lifestyle choices and regular medical check-ups. Maintain a balanced diet,
+            limit sugars, exercise regularly, manage your weight and stay hydrated!"""
         )
     else:
         st.write("You are predicted to be not at-risk of diabetes!")
