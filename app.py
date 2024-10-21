@@ -102,10 +102,10 @@ processed_df = processed_df.reindex(columns=expected_columns, fill_value=0)
 
 # load model
 if st.button("Predict"):
-    rf_model = joblib.load('models/rf_model.pkl')
-    gb_model = joblib.load('models/grad_model.pkl')
-    xgb_model = joblib.load('models/xgb_model.pkl')
-    meta_model = joblib.load('models/lightgbm_meta_model.pkl')
+    rf_model = joblib.load('rf_model.pkl')
+    gb_model = joblib.load('grad_model.pkl')
+    xgb_model = joblib.load('xgb_model.pkl')
+    meta_model = joblib.load('lightgbm_meta_model.pkl')
 
     # predict models
     rf_pred = rf_model.predict_proba(processed_df)[:, 1] 
@@ -131,14 +131,16 @@ if st.button("Predict"):
                             max_value=1
                         ),
                     })
-        st.info("""Preventing diabetes involves a combination of healthy lifestyle choices and regular medical check-ups:
-        - **Balanced Diet**: Eat whole grains, fruits, vegetables, and lean proteins.
-        - **Limit Sugars**: Reduce intake of sugary and processed foods.
-        - **Regular Exercise**: Aim for at least 150 minutes of moderate activity weekly.
-        - **Weight Management**: Maintain a healthy weight to improve insulin sensitivity.
-        - **Stress Management**: Practice stress-reduction techniques like mindfulness or yoga.
-        - **Regular Check-Ups**: Get routine health screenings to catch early signs of diabetes.
-        - **Stay Hydrated**: Drink plenty of water and limit sugary beverages.""")
+    st.info(
+        """Preventing diabetes involves a combination of healthy lifestyle choices and regular medical check-ups:<br>
+        - **Balanced Diet**: Eat whole grains, fruits, vegetables, and lean proteins.<br>
+        - **Limit Sugars**: Reduce intake of sugary and processed foods.<br>
+        - **Regular Exercise**: Aim for at least 150 minutes of moderate activity weekly.<br>
+        - **Weight Management**: Maintain a healthy weight to improve insulin sensitivity.<br>
+        - **Stress Management**: Practice stress-reduction techniques like mindfulness or yoga.<br>
+        - **Regular Check-Ups**: Get routine health screenings to catch early signs of diabetes.<br>
+        - **Stay Hydrated**: Drink plenty of water and limit sugary beverages."""
+    )
     else:
         st.write("You are predicted to be not at-risk of diabetes!")
         st.dataframe(pd.DataFrame({'Probability': meta_prediction_proba}),
