@@ -99,6 +99,10 @@ for column in expected_columns:
 # reorder the features same as the model 
 processed_df = processed_df.reindex(columns=expected_columns, fill_value=0)
 
+# define x, y
+x = processed_df.drop(columns=["diabetes"])
+y = processed_df["diabetes"]
+
 # load model
 if st.button("Predict"):
     rf_model = joblib.load('rf_model.pkl')
