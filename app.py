@@ -3,7 +3,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import joblib
-from PIL import Image
 
 
 # define title and info 
@@ -131,16 +130,16 @@ if st.button("Predict"):
                             max_value=1
                         ),
                     })
-    st.info(
-        """Preventing diabetes involves a combination of healthy lifestyle choices and regular medical check-ups:<br>
-        - **Balanced Diet**: Eat whole grains, fruits, vegetables, and lean proteins.<br>
-        - **Limit Sugars**: Reduce intake of sugary and processed foods.<br>
-        - **Regular Exercise**: Aim for at least 150 minutes of moderate activity weekly.<br>
-        - **Weight Management**: Maintain a healthy weight to improve insulin sensitivity.<br>
-        - **Stress Management**: Practice stress-reduction techniques like mindfulness or yoga.<br>
-        - **Regular Check-Ups**: Get routine health screenings to catch early signs of diabetes.<br>
-        - **Stay Hydrated**: Drink plenty of water and limit sugary beverages."""
-    )
+        st.info(
+            """Preventing diabetes involves a combination of healthy lifestyle choices and regular medical check-ups:<br>
+            - **Balanced Diet**: Eat whole grains, fruits, vegetables, and lean proteins.<br>
+            - **Limit Sugars**: Reduce intake of sugary and processed foods.<br>
+            - **Regular Exercise**: Aim for at least 150 minutes of moderate activity weekly.<br>
+            - **Weight Management**: Maintain a healthy weight to improve insulin sensitivity.<br>
+            - **Stress Management**: Practice stress-reduction techniques like mindfulness or yoga.<br>
+            - **Regular Check-Ups**: Get routine health screenings to catch early signs of diabetes.<br>
+            - **Stay Hydrated**: Drink plenty of water and limit sugary beverages."""
+        )
     else:
         st.write("You are predicted to be not at-risk of diabetes!")
         st.dataframe(pd.DataFrame({'Probability': meta_prediction_proba}),
