@@ -277,7 +277,10 @@ print(report)
 import joblib
 
 # save model 
-rf_model = joblib.load('models/rf_model.pkl')
-gb_model = joblib.load('models/grad_model.pkl')
-xgb_model = joblib.load('models/xgb_model.pkl')
-meta_model = joblib.load('models/lightgbm_meta_model.pkl')
+joblib.dump(rf_model, '/Users/chloeong/diabetes prediction/rf_model.pkl')
+joblib.dump(grad_model, '/Users/chloeong/diabetes prediction/grad_model.pkl')
+joblib.dump(xgb_model, '/Users/chloeong/diabetes prediction/xgb_model.pkl')
+joblib.dump(lgb_model, '/Users/chloeong/diabetes prediction/lightgbm_meta_model.pkl')
+
+
+  
